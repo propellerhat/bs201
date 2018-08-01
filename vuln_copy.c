@@ -12,7 +12,7 @@ interesting_func (void)
 void
 vuln_copy (char *source)
 {
-  char buffer[14];
+  char buffer[256];
   strcpy (buffer, source);
 }
 
