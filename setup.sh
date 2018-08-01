@@ -27,7 +27,11 @@ python setup.py install
 cd $HOME
 sudo -u $real_user git clone https://github.com/alset0326/peda-arm.git
 sudo -u $real_user echo "source ~/peda-arm/peda-arm.py" >> ~/.gdbinit
+sudo -u $real_user chmod +x aslr_ctl.sh
+
+echo "This script will disable ASLR systemwide until it is manually re-enabled"
+echo "or until the machine restarts. The shell script 'aslr_ctl.sh' can be used"
+echo "re-enable it. You can also use 'aslr_ctl.sh' to permenently disable aslr."
 
 echo 0 | tee /proc/sys/kernel/randomize_va_space
-echo "kernel.randomize_va_space = 0" > /etc/sysctl.d/01-disable-aslr.conf
 
