@@ -13,18 +13,18 @@ fi
 
 sudo -u $real_user chmod +x gcc_unsafe
 
-cd $HOME
+cd /home/"${real_user}"
 sudo -u $real_user git clone https://github.com/aquynh/capstone.git
 cd capstone/
 sudo -u $real_user ./make.sh
 ./make.sh install
 cd bindings/python/
 make install
-cd $HOME
+cd /home/"${real_user}"
 sudo -u $real_user git clone https://github.com/JonathanSalwan/ROPgadget.git
 cd ROPgadget/
 python setup.py install
-cd $HOME
+cd /home/"${real_user}"
 sudo -u $real_user git clone https://github.com/alset0326/peda-arm.git
 sudo -u $real_user echo "source ~/peda-arm/peda-arm.py" >> ~/.gdbinit
 sudo -u $real_user chmod +x aslr_ctl.sh
