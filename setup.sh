@@ -26,7 +26,7 @@ cd ROPgadget/
 python setup.py install
 cd /home/"${real_user}"
 sudo -u $real_user git clone https://github.com/alset0326/peda-arm.git
-sudo -u $real_user echo "source ~/peda-arm/peda-arm.py" >> ~/.gdbinit
+sudo -u $real_user echo "source /home/"${real_user}"/peda-arm/peda-arm.py" >> /home/"${real_user}"/.gdbinit
 sudo -u $real_user chmod +x aslr_ctl.sh
 
 echo "This script will disable ASLR systemwide until it is manually re-enabled"
